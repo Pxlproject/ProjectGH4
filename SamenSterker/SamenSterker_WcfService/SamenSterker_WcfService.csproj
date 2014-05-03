@@ -59,14 +59,22 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Service1.svc" />
+    <Content Include="SamenSterker_Service.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Service1.svc.cs">
-      <DependentUpon>Service1.svc</DependentUpon>
+    <Compile Include="Company.cs" />
+    <Compile Include="CompanyDB.cs" />
+    <Compile Include="Contract.cs" />
+    <Compile Include="ContractFormula.cs" />
+    <Compile Include="Location.cs" />
+    <Compile Include="Logging.cs" />
+    <Compile Include="Reservation.cs" />
+    <Compile Include="SamenSterkerDB.cs" />
+    <Compile Include="SamenSterker_Service.svc.cs">
+      <DependentUpon>SamenSterker_Service.svc</DependentUpon>
     </Compile>
-    <Compile Include="IService1.cs" />
+    <Compile Include="ISamenSterker_Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
