@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("BasketWcfService")]
+[assembly: AssemblyTitle("SamenSterker_WcfService")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("BasketWcfService")]
+[assembly: AssemblyProduct("SamenSterker_WcfService")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("1fafbc8b-6fa1-406b-b5f8-a837ff7314c1")]
+[assembly: Guid("c35f0905-1d97-404e-983e-dbf2406c5d61")]
 
 // Version information for an assembly consists of the following four values:
 //
