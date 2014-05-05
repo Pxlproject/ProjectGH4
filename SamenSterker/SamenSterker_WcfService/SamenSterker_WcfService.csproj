@@ -66,10 +66,14 @@
     <Compile Include="Company.cs" />
     <Compile Include="CompanyDB.cs" />
     <Compile Include="Contract.cs" />
+    <Compile Include="ContractDB.cs" />
     <Compile Include="ContractFormula.cs" />
+    <Compile Include="ContractFormulaDB.cs" />
     <Compile Include="Location.cs" />
+    <Compile Include="LocationDB.cs" />
     <Compile Include="Logging.cs" />
     <Compile Include="Reservation.cs" />
+    <Compile Include="ReservationDB.cs" />
     <Compile Include="SamenSterkerDB.cs" />
     <Compile Include="SamenSterker_Service.svc.cs">
       <DependentUpon>SamenSterker_Service.svc</DependentUpon>
