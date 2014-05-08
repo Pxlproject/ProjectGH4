@@ -1,0 +1,17 @@
+﻿<Window x:Class="SamenSterker_User.Reservatie_Overzicht"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Reservatie_Overzicht" Height="400" Width="500">
+    <Grid>
+        <Image x:Name="imgLogo" HorizontalAlignment="Left" Height="100" Margin="382,10,0,0" VerticalAlignment="Top" Width="100" Source="logo.png"/>
+        <Button Name="btnLogOff" Content="Afmelden" HorizontalAlignment="Left" Margin="20,40,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Name="lblUser" Content="Aangemeld als gebruiker1" HorizontalAlignment="Left" Margin="20,9,0,0" VerticalAlignment="Top"/>
+        <Menu Name="menuNav" HorizontalAlignment="Left" Height="23" Margin="20,94,0,0" VerticalAlignment="Top" Width="400">
+            <Button Content="Home" Width="85"/>
+            <Button Content="Bedrijven" Width="85"/>
+            <Button Content="Contracten" Width="85"/>
+            <Button Content="Reservaties" Width="85"/>
+        </Menu>
+
+    </Grid>
+</Window>
