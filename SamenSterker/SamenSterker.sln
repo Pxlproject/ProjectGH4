@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SamenSterker_WcfService", "SamenSterker_WcfService\SamenSterker_WcfService.csproj", "{C3E20C49-6B05-4A5E-A0A7-0C8215D8AD03}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SamenSterker_User", "SamenSterker_User\SamenSterker_User.csproj", "{DA7E5AB2-0AF9-4D9F-81A3-9EC37EAC8C90}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C3E20C49-6B05-4A5E-A0A7-0C8215D8AD03} = {C3E20C49-6B05-4A5E-A0A7-0C8215D8AD03}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
