@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="af7fb6c5-7a8e-4c2c-98d5-5ff11ee0f878" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:49846/SamenSterker_Service.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SamenSterker_Service.xsd" MetadataType="Schema" ID="0cf22a3c-1c7f-4e64-8b12-bf57e457f8c0" SourceId="1" SourceUrl="http://localhost:49846/SamenSterker_Service.svc?xsd=xsd2" />
+    <MetadataFile FileName="SamenSterker_Service1.xsd" MetadataType="Schema" ID="1b3beaf5-45c7-447a-b805-e778629ab863" SourceId="1" SourceUrl="http://localhost:49846/SamenSterker_Service.svc?xsd=xsd1" />
+    <MetadataFile FileName="SamenSterker_Service.disco" MetadataType="Disco" ID="55795081-195d-4e1c-99d3-aec483f647ba" SourceId="1" SourceUrl="http://localhost:49846/SamenSterker_Service.svc?disco" />
+    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="e31b5938-f9dc-4d7d-8323-f35c79581905" SourceId="1" SourceUrl="http://localhost:49846/SamenSterker_Service.svc?wsdl" />
+    <MetadataFile FileName="SamenSterker_Service2.xsd" MetadataType="Schema" ID="4ba61ac8-5b67-4335-9dc6-84ca77640cc8" SourceId="1" SourceUrl="http://localhost:49846/SamenSterker_Service.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
