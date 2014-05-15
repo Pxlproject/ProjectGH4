@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SamenSterker_WcfService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SamenSterker_WcfService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfCompany">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Company" nillable="true" type="tns:Company" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompany" nillable="true" type="tns:ArrayOfCompany" />
+  <xs:complexType name="Company">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="city" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="street" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="zipcode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Company" nillable="true" type="tns:Company" />
+  <xs:complexType name="ArrayOfContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Contract" nillable="true" type="tns:Contract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContract" nillable="true" type="tns:ArrayOfContract" />
+  <xs:complexType name="Contract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="companyId" type="xs:int" />
+      <xs:element minOccurs="0" name="contractFormulaId" type="xs:int" />
+      <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="number" type="xs:int" />
+      <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Contract" nillable="true" type="tns:Contract" />
+  <xs:complexType name="ArrayOfContractFormula">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContractFormula" nillable="true" type="tns:ContractFormula" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContractFormula" nillable="true" type="tns:ArrayOfContractFormula" />
+  <xs:complexType name="ContractFormula">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="maxUsageHoursPerPeriod" type="xs:int" />
+      <xs:element minOccurs="0" name="noticePeriodInMonths" type="xs:int" />
+      <xs:element minOccurs="0" name="periodInMonths" type="xs:int" />
+      <xs:element minOccurs="0" name="price" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContractFormula" nillable="true" type="tns:ContractFormula" />
+  <xs:complexType name="ArrayOfLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Location" nillable="true" type="tns:Location" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLocation" nillable="true" type="tns:ArrayOfLocation" />
+  <xs:complexType name="Location">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Location" nillable="true" type="tns:Location" />
+  <xs:complexType name="ArrayOfReservation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Reservation" nillable="true" type="tns:Reservation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReservation" nillable="true" type="tns:ArrayOfReservation" />
+  <xs:complexType name="Reservation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="companyId" type="xs:int" />
+      <xs:element minOccurs="0" name="createDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="locationId" type="xs:int" />
+      <xs:element minOccurs="0" name="locationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="number" type="xs:int" />
+      <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Reservation" nillable="true" type="tns:Reservation" />
+</xs:schema>

@@ -27,5 +27,7 @@ namespace SamenSterker_WcfService
         public int locationId { get; set; }
         [DataMember]
         public DateTime createDate { get; set; }
+        [DataMember]
+        public String locationName { get; set; }
     }
 }

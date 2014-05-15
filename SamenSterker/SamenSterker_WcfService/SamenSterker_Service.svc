@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="SamenSterker_WcfService.Service1" CodeBehind="SamenSterker_Service.svc.cs" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="SamenSterker_WcfService.SamenSterker_Service" CodeBehind="SamenSterker_Service.svc.cs" %>

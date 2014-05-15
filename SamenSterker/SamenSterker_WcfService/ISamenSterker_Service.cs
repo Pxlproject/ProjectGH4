@@ -12,36 +12,94 @@ namespace SamenSterker_WcfService
     [ServiceContract]
     public interface ISamenSterker_Service
     {
-
+        // methoden van de klasse CompanyDB
+        /// <summary>
+        /// haalt een lijst op met de gegevens van bedrijven
+        /// </summary>
+        /// <returns> companyList (lijst van bedrijven) </returns>
         [OperationContract]
-        string GetData(int value);
+        List<Company> GetAllCompanies();
 
+        /// <summary>
+        /// voegt een nieuw bedrijf toe
+        /// </summary>
+        /// <param name="comp"></param>
+        /// <returns> False of True (of het toevoegen al dan niet gelukt is) </returns>
         [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
+        Boolean AddCompany(Company comp);
 
-        // TODO: Add your service operations here
-    }
+        /// <summary>
+        /// past de gegevens van een bedrijf aan
+        /// </summary>
+        /// <param name="old"></param>
+        /// <param name="updated"></param>
+        /// <returns> True of False (of de update al dan niet gelukt is) </returns>
+        [OperationContract]
+        Boolean UpdateCompany(Company old, Company updated);
 
+        /// <summary>
+        /// verwijdert een bedrijf met zijn gegevens
+        /// </summary>
+        /// <param name="comp"></param>
+        /// <returns> True of False (naargelang het verwijderen geslaagd is) </returns>
+        [OperationContract]
+        Boolean DeleteCompany(Company comp);
 
-    // Use a data contract as illustrated in the sample below to add composite types to service operations.
-    [DataContract]
-    public class CompositeType
-    {
-        bool boolValue = true;
-        string stringValue = "Hello ";
+        // methoden van de klasse ContractDB
+        /// <summary>
+        /// haalt een lijst op met de gegevens van contracten
+        /// </summary>
+        /// <returns> contractList (lijst van contracten) </returns>
+        [OperationContract]
+        List<Contract> GetAllContracts();
 
-        [DataMember]
-        public bool BoolValue
-        {
-            get { return boolValue; }
-            set { boolValue = value; }
-        }
+        // methoden van de klasse ContractFormulaDB
+        /// <summary>
+        /// haalt een lijst op met de gegevens van contractFormula
+        /// </summary>
+        /// <returns> contractFormulaList (lijst van contractFormula) </returns>
+        [OperationContract]
+        List<ContractFormula> GetAllContractFormula();
 
-        [DataMember]
-        public string StringValue
-        {
-            get { return stringValue; }
-            set { stringValue = value; }
-        }
+        // methoden van de klasse LocationDB
+        /// <summary>
+        /// haalt een lijst op met de locaties
+        /// </summary>
+        /// <returns></returns>
+        [OperationContract]
+        List<Location> GetAllLocations();
+
+        // methoden van de klasse ReservationDB
+        /// <summary>
+        /// haalt een lijst op met de gegevens van reservaties
+        /// </summary>
+        /// <returns> reservationList (lijst van reservaties) </returns>
+        [OperationContract]
+        List<Reservation> GetAllReservations();
+
+        /// <summary>
+        /// voegt een nieuwe reservatie toe
+        /// </summary>
+        /// <param name="reserv"></param>
+        /// <returns> True of False (of het toevoegen al dan niet gelukt is) </returns>
+        [OperationContract]
+        Boolean AddReservation(Reservation reserv);
+
+        /// <summary>
+        /// past een reservatie aan
+        /// </summary>
+        /// <param name="old"></param>
+        /// <param name="updated"></param>
+        /// <returns> True of False (of de update al dan niet gelukt is) </returns>
+        [OperationContract]
+        Boolean UpdateReservation(Reservation old, Reservation updated);
+
+        /// <summary>
+        /// verwijdert een reservatie
+        /// </summary>
+        /// <param name="reserv"></param>
+        /// <returns> True of False (naargelang het verwijderen geslaagd is) </returns>
+        [OperationContract]
+        Boolean DeleteReservation(Reservation reserv);
     }
 }

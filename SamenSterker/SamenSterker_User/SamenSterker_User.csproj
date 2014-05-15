@@ -38,8 +38,6 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -57,21 +55,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Reservatie_Overzicht.xaml.cs">
-      <DependentUpon>Reservatie_Overzicht.xaml</DependentUpon>
+    <Compile Include="CompanySummary.xaml.cs">
+      <DependentUpon>CompanySummary.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Service References\SamenSterker_ServiceReference\Reference.cs">
+    <Compile Include="ReservationSummary.xaml.cs">
+      <DependentUpon>ReservationSummary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SamenSterkerServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Registration.xaml.cs">
-      <DependentUpon>Registration.xaml</DependentUpon>
+    <Compile Include="Test.xaml.cs">
+      <DependentUpon>Test.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Welcome.xaml.cs">
-      <DependentUpon>Welcome.xaml</DependentUpon>
-    </Compile>
-    <Page Include="Login.xaml">
+    <Page Include="CompanySummary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -83,19 +81,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Login.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Reservatie_Overzicht.xaml">
-    <Page Include="Registration.xaml">
+    <Page Include="ReservationSummary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Welcome.xaml">
+    <Page Include="Test.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -123,24 +117,34 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Service References\SamenSterker_ServiceReference\SamenSterker_Service.xsd">
+    <None Include="Service References\SamenSterkerServiceReference\SamenSterker_Service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SamenSterker_ServiceReference\SamenSterker_Service1.xsd">
+    <None Include="Service References\SamenSterkerServiceReference\SamenSterker_Service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SamenSterker_ServiceReference\SamenSterker_Service2.xsd">
+    <None Include="Service References\SamenSterkerServiceReference\SamenSterker_Service2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SamenSterker_ServiceReference\SamenSterker_User.SamenSterker_ServiceReference.CompositeType.datasource">
+    <None Include="Service References\SamenSterkerServiceReference\SamenSterker_User.SamenSterkerServiceReference.Company.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\SamenSterker_ServiceReference\Service1.wsdl" />
+    <None Include="Service References\SamenSterkerServiceReference\SamenSterker_User.SamenSterkerServiceReference.Contract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SamenSterkerServiceReference\SamenSterker_User.SamenSterkerServiceReference.ContractFormula.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SamenSterkerServiceReference\SamenSterker_User.SamenSterkerServiceReference.Location.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SamenSterkerServiceReference\SamenSterker_User.SamenSterkerServiceReference.Reservation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SamenSterkerServiceReference\Service1.wsdl" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="logo.png" />
@@ -149,19 +153,19 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\SamenSterker_ServiceReference\" />
+    <WCFMetadataStorage Include="Service References\SamenSterkerServiceReference\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\SamenSterker_ServiceReference\SamenSterker_Service.disco" />
+    <None Include="Service References\SamenSterkerServiceReference\SamenSterker_Service.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\SamenSterker_ServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\SamenSterkerServiceReference\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\SamenSterker_ServiceReference\configuration.svcinfo" />
+    <None Include="Service References\SamenSterkerServiceReference\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\SamenSterker_ServiceReference\Reference.svcmap">
+    <None Include="Service References\SamenSterkerServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

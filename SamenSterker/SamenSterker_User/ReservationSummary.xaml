@@ -1,0 +1,45 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:SamenSterkerServiceReference="clr-namespace:SamenSterker_User.SamenSterkerServiceReference" mc:Ignorable="d" x:Class="SamenSterker_User.ReservationSummary"
+        Title="Reservatie_Overzicht" Height="700" Width="800">
+    <Window.Resources>
+        <CollectionViewSource x:Key="reservationViewSource" d:DesignSource="{d:DesignInstance {x:Type SamenSterkerServiceReference:Reservation}, CreateList=True}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource reservationViewSource}">
+        <!-- Header -->
+        <Image x:Name="imgLogo" HorizontalAlignment="Left" Height="75" Margin="555,9,0,0" VerticalAlignment="Top" Width="200" Source="logo.png"/>
+        <Button x:Name="btnLogOff" Content="Afmelden" HorizontalAlignment="Left" Margin="20,40,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="lblUser" Content="Aangemeld als gebruiker1" HorizontalAlignment="Left" Margin="20,9,0,0" VerticalAlignment="Top"/>
+
+        <!-- Navigation -->
+        <Button x:Name="btnHome" Content="Home" HorizontalAlignment="Left" Margin="20,90,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="btnCompanies" Content="Bedrijven" HorizontalAlignment="Left" Margin="120,90,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="btnContracts" Content="Contracten" HorizontalAlignment="Left" Margin="220,90,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="btnReservations" Content="Reservaties" HorizontalAlignment="Left" Margin="320,90,0,0" VerticalAlignment="Top" Width="100" Background="#FFA0A0A0"/>
+
+        <!-- Data -->
+        <Label x:Name="lblSummary" Content="Overzicht" HorizontalAlignment="Left" Margin="20,124,0,0" VerticalAlignment="Top" Width="100" FontSize="20"/>
+        <ListView x:Name="lvReservations" HorizontalAlignment="Left" Height="200" Margin="35,184,0,0" VerticalAlignment="Top" Width="500" ItemsSource="{Binding ReservationList}" Loaded="lvReservations_Loaded">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn
+						Header="ID" Width="50"
+						DisplayMemberBinding="{Binding id}" />
+                    <GridViewColumn
+						Header="Vergaderzaal" Width="100"
+						DisplayMemberBinding="{Binding locationName}" />
+                    <GridViewColumn
+						Header="Startdatum" Width="150"
+						DisplayMemberBinding="{Binding startDate}" />
+                    <GridViewColumn
+						Header="Einddatum" Width="150"
+						DisplayMemberBinding="{Binding endDate}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        
+    </Grid>
+</Window>
+
