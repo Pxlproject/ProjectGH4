@@ -33,7 +33,16 @@ namespace Login_WPF
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            if (textBoxEmail.Text.Length == 0)
+            // gebruiker valideren
+            if (Membership.ValidateUser(txtBoxUsername.Text, passwordBox1.Password))
+            {
+                // gebruiker inloggen op de site
+                FormsAuthentication.RedirectFromLoginPage(txtBoxUsername.Text,chkboxRemember.Checked);
+            }
+            // bij foute credentials
+            lblInvalidCred.IsEnabled = true;
+
+            /*if (textBoxEmail.Text.Length == 0)
             {
                 errormessage.Text = "Enter an email.";
                 textBoxEmail.Focus();
@@ -68,7 +77,7 @@ namespace Login_WPF
                     errormessage.Text = "Sorry! Please enter existing emailid/password.";
                 }
                 con.Close();
-            }
+            }*/
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)

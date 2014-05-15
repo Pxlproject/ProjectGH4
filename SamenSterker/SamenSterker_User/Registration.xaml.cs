@@ -35,85 +35,42 @@ namespace Login_WPF
             Close();
         }
 
-        private void button2_Click(object sender, RoutedEventArgs e)
+        private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
-            Reset();
+            MembershipCreateStatus createStatus;
+
+            MembershipUser newUser = Membership.CreateUser(txtBoxUsername.Text
+                , passwordBox.Password, txtBoxEmail.Text
+                , txtBoxSecurityQuestion.Text, txtBoxSecAnswer.Text, true, out createStatus);
+            switch (createStatus)
+            {
+                case MembershipCreateStatus.Success:
+                    errormessage.Text = "The user account was succesfully created!";
+                    break;
+                case MembershipCreateStatus.DuplicateUserName:
+                    errormessage.Text = "There already exists a user with this username.";
+                    break;
+                case MembershipCreateStatus.DuplicateEmail:
+                    errormessage.Text = "There already exists a user with this email address.";
+                    break;
+                case MembershipCreateStatus.InvalidEmail:
+                    errormessage.Text = "The email address you provided is invalid.";
+                    break;
+                case MembershipCreateStatus.InvalidAnswer:
+                    errormessage.Text = "The security answer was invalid.";
+                    break;
+                case MembershipCreateStatus.InvalidPassword:
+                    errormessage.Text = "The password you provided is invalid.";
+                    break;
+                default:
+                    errormessage.Text = "There was an unknown error; the user account was NOT created.";
+                    break;
+            }
         }
 
-        public void Reset()
+        private void btnClear_Click(object sender, RoutedEventArgs e)
         {
-            txtFirstName.Text = "";
-            txtLastName.Text = "";
-            txtBoxEmail.Text = "";
-            txtBoxUsername.Text = "";
-            passwordBox1.Password = "";
-            passwordBoxConfirm.Password = "";
-        }
-        private void button3_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
 
-        private void Submit_Click(object sender, RoutedEventArgs e)
-        {
-            MembershipCreateStatus result;
-
-            if (txtBoxEmail.Text.Length == 0)
-            {
-                errormessage.Text = "Enter an email.";
-                txtBoxEmail.Focus();
-            }
-            else if (!Regex.IsMatch(txtBoxEmail.Text, @"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"))
-            {
-                errormessage.Text = "Enter a valid email.";
-                txtBoxEmail.Select(0, txtBoxEmail.Text.Length);
-                txtBoxEmail.Focus();
-            }
-            else
-            {
-                string firstname = txtFirstName.Text;
-                string lastname = txtLastName.Text;
-                string email = txtBoxEmail.Text;
-                string password = passwordBox1.Password;
-                if (passwordBox1.Password.Length == 0)
-                {
-                    errormessage.Text = "Enter password.";
-                    passwordBox1.Focus();
-                }
-                else if (passwordBoxConfirm.Password.Length == 0)
-                {
-                    errormessage.Text = "Enter Confirm password.";
-                    passwordBoxConfirm.Focus();
-                }
-                else if (passwordBox1.Password != passwordBoxConfirm.Password)
-                {
-                    errormessage.Text = "Confirm password must be same as password.";
-                    passwordBoxConfirm.Focus();
-                }
-                else
-                {
-                    errormessage.Text = "";
-                    string username = txtBoxUsername.Text;
-
-                    if (Membership.FindUsersByName(username) == null)
-                    {
-                        Membership.CreateUser(username, password, email, "Hood", "Pine Hills", true, out result);
-                        errormessage.Text = result.ToString();
-                        errormessage.Text = "You have Registered successfully.";
-                    }
-                    else
-                        errormessage.Text = "Gebruiker " + username + " bestaat in de DB!";
-
-                    //SqlConnection con = new SqlConnection("Data Source=TESTPURU;Initial Catalog=Data;User ID=sa;Password=wintellect");
-                    //con.Open();
-                    //SqlCommand cmd = new SqlCommand("Insert into Registration (FirstName,LastName,Email,Password,Address) values('" + firstname + "','" + lastname + "','" + email + "','" + password + "')", con);
-                   // cmd.CommandType = CommandType.Text;
-                    //cmd.ExecuteNonQuery();
-                    //con.Close();
-                    
-                    Reset();
-                }
-            }
         }
     }
 }
